@@ -1,39 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
     background: #0f172a;
     color: white;
 }
 
-header {
-    text-align: center;
-    padding: 50px;
-    background: #1e293b;
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(10px);
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #1e293b, #020617);
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+/* SECTIONS */
 section {
-    padding: 40px;
+    padding: 100px 50px;
     text-align: center;
 }
 
-.projects .card {
-    display: inline-block;
-    background: #334155;
-    margin: 15px;
+/* PROJECTS */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    margin: 20px;
     padding: 20px;
-    border-radius: 10px;
     width: 250px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
-.projects img {
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.card img {
+    width: 100%;
     border-radius: 10px;
-    margin-top: 10px;
 }
 
-.contact input, .contact textarea {
-    display: block;
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #38bdf8;
+}
+
+/* CONTACT */
+input, textarea {
     width: 80%;
-    margin: 10px auto;
+    margin: 10px;
     padding: 10px;
     border-radius: 5px;
     border: none;
