@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Hi, I'm a Developer 🚀</p>
+</header>
+
+<section class="about">
+    <h2>About Me</h2>
+    <p>I build web apps using Python, Flask & MySQL.</p>
+</section>
+
+<section class="projects">
+    <h2>Projects</h2>
+
+    {% if projects %}
+        {% for project in projects %}
+            <div class="card">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                {% if project.image_url %}
+                    <img src="{{ project.image_url }}" width="200">
+                {% endif %}
+                <br>
+                {% if project.project_link %}
+                    <a href="{{ project.project_link }}" target="_blank">View Project</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No projects added yet.</p>
+    {% endif %}
+
+</section>
+
+<section class="contact">
+    <h2>Contact Me</h2>
+    <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 My Portfolio</p>
+</footer>
+
+</body>
+</html>
