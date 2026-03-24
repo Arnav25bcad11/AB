@@ -16,27 +16,29 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <h2 class="logo">Alex</h2>
     <ul>
-        <li><a class="active">Home</a></li>
-        <li><a>Services</a></li>
-        <li><a>Skills</a></li>
-        <li><a>Education</a></li>
-        <li><a>Experience</a></li>
-        <li><a>Contact</a></li>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<section class="hero">
+<!-- HERO -->
+<section id="home" class="hero">
 
     <div class="left">
         <div class="circle"></div>
-       <img src="{{ url_for('static', filename='images/profile.png') }}">
+        <img src="{{ url_for('static', filename='images/profile.png') }}">
     </div>
 
     <div class="right">
-        <h1>Hi, It's <span>Alex</span></h1>
+        <h1>Hi, It's <span>Arnav Binu</span></h1>
         <h2>I'm a <span class="highlight">Web Developer</span></h2>
 
         <p>
@@ -54,6 +56,85 @@
 
         <button>Hire me</button>
     </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I'm a 1st-year BCA student at Kristu Jayanti University, Bangalore.
+        I have completed certification courses in MongoDB, HTML, CSS, JavaScript, and Node.js.
+        I am passionate about web development and building modern, responsive websites.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+    <h2>Services</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Responsive websites using HTML, CSS, and JavaScript.</p>
+        </div>
+
+        <div class="card">
+            <h3>Frontend Design</h3>
+            <p>Modern UI/UX design with clean and attractive layouts.</p>
+        </div>
+
+        <div class="card">
+            <h3>Backend Basics</h3>
+            <p>Basic backend with Node.js and MongoDB database handling.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+    <h2>Education</h2>
+
+    <div class="card">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>Kristu Jayanti University, Bangalore</p>
+        <p>2026 - Present</p>
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Built using Flask, HTML, and CSS.</p>
+        </div>
+
+        <div class="card">
+            <h3>Contact Form App</h3>
+            <p>Flask app with MySQL integration.</p>
+        </div>
+
+        <div class="card">
+            <h3>Frontend UI Designs</h3>
+            <p>Multiple UI projects using HTML, CSS, JavaScript.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+
+    <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 
 </section>
 
