@@ -8,16 +8,16 @@ app = Flask(__name__)
 # Database connection
 def get_db_connection():
     try:
-        connection = mysql.connector.connect(
+        return mysql.connector.connect(
             host=os.getenv("MYSQLHOST"),
             user=os.getenv("MYSQLUSER"),
             password=os.getenv("MYSQLPASSWORD"),
             database=os.getenv("MYSQLDATABASE"),
-            port=int(os.getenv("MYSQLPORT", 3306))
+            port=int(os.getenv("MYSQLPORT", 3306)),
+            connection_timeout=5
         )
-        return connection
-    except Error as e:
-        print("Database error:", e)
+    except Exception as e:
+        print("DB Error:", e)
         return None
 
 # Initialize DB
