@@ -13,15 +13,14 @@ def get_db_connection():
             user=os.getenv("MYSQLUSER"),
             password=os.getenv("MYSQLPASSWORD"),
             database=os.getenv("MYSQLDATABASE"),
-            port=int(os.getenv("MYSQLPORT", 3306)),
-            connection_timeout=5
+            port=int(os.getenv("MYSQLPORT", 3306))
         )
     except Exception as e:
         print("DB Error:", e)
         return None
 
 # Initialize DB
-def init_db():
+def init_db()
     conn = get_db_connection()
     if conn:
         cursor = conn.cursor()
